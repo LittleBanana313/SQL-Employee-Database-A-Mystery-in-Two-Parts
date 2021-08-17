@@ -5,6 +5,7 @@ JOIN salaries
 ON employees.emp_no = salaries.emp_no;
 
 -- 2) List first name, last name, and hire date for employees who were hired in 1986.
+ALTER TABLE employees ALTER COLUMN hire_date TYPE date using to_date(hire_date, 'MM/DD/YYYY')
 SELECT first_name, last_name, hire_date 
 FROM employees
 WHERE hire_date BETWEEN '1/1/1985' AND'12/30/1986'
