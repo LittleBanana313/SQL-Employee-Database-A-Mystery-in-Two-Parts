@@ -1,4 +1,7 @@
 # SQL-Employee-Database-A-Mystery-in-Two-Parts
+![Alt text](Submission-Final/employeeERD.png?raw=true "Title")
+
+
 **Once you have a complete database, do the following:**
 1) List the following details of each employee: employee number, last name, first name, sex, and salary.
 ```
@@ -65,3 +68,17 @@ Epilogue
 SELECT * FROM employees
 WHERE emp_no= 499942
 ```
+**Bonus**
+1) Import the SQL database into Pandas. (Yes, you could read the CSVs directly in Pandas, but you are, after all, trying to prove your technical mettle.) This step may require some research. Feel free to use the code below to get started. Be sure to make any necessary modifications for your username, password, host, port, and database name:
+```
+from config import user, password, db_name
+
+# Connect to database
+connection_string = (f'postgresql://{user}:{password}@localhost/{db_name}')
+engine = create_engine(connection_string)                     
+conn = engine.connect()
+```
+2) Create a histogram to visualize the most common salary ranges for employees.\
+![Alt text](Submission-Final/salaryfreq.png?raw=true "Title")
+3) Create a bar chart of average salary by title.
+![Alt text](Submission-Final/salarybytitle.png?raw=true "Title")
